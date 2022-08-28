@@ -8,5 +8,5 @@ echo "simple content" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -hR ubuntu:ubuntu /data/
 sed -i "/listen 80 default_server/a \n\tlocation /hbnb_static/ {\n\talias /data/web_static/current/;\n}" /etc/nginx/sites-available/default
-sed -i "/listen 80 default_server/a \n\tlocation /hbnb_static/ {\n\talias /data/web_static/current/;\n}" /etc/nginx/sites-enaabled/default
+sed -i "/listen 80 default_server/a \\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n" /etc/nginx/sites-enaabled/default
 service nginx restart
