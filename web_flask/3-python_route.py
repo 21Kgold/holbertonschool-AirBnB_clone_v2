@@ -25,8 +25,9 @@ def hello_world3(text):
     return "C {}".format(text)
 
 
+@app.route("/python/", defaults={'text': 'is cool'})
 @app.route("/python/<text>", strict_slashes=False)
-def hello_world3(text):
+def hello_world4(text):
     text = text.replace("_", " ")
     return "Python {}".format(text)
 
