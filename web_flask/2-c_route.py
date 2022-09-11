@@ -21,8 +21,8 @@ def hello_world2():
 
 @app.route("/c/<text>", strict_slashes=False)
 def hello_world3(text):
-    new_text = text.replace("_", " ")
-    return f"C {new_text}"
+    text = text.replace("_", " ")
+    return "C {}".format(text)
 
 
 if __name__ == '__main__':
